@@ -2,3 +2,4 @@ from .mercado_service import MercadoService
 from .instrumento_service import InstrumentoService
 from .emisor_service import EmisorService
 from .dividendo_service import DividendoService
+from .calificacion_service import CalificacionService

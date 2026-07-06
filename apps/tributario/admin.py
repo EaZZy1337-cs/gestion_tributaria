@@ -5,6 +5,7 @@ from apps.tributario.models import (
     Instrumento,
     Emisor,
     Dividendo,
+    CalificacionTributaria,
 )
 
 
@@ -105,4 +106,30 @@ class DividendoAdmin(admin.ModelAdmin):
 
     ordering = (
         "-fecha_pago",
+    )
+
+@admin.register(CalificacionTributaria)
+class CalificacionTributariaAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "instrumento",
+        "ejercicio",
+        "numero_evento",
+        "estado",
+        "fecha_creacion",
+    )
+
+    search_fields = (
+        "instrumento__ticker",
+        "descripcion",
+    )
+
+    list_filter = (
+        "ejercicio",
+        "estado",
+    )
+
+    ordering = (
+        "-ejercicio",
+        "numero_evento",
     )
