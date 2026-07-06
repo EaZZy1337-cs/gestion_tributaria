@@ -1,3 +1,4 @@
 from .mercado_repository import MercadoRepository
 from .instrumento_repository import InstrumentoRepository
 from .emisor_repository import EmisorRepository
+from .dividendo_repository import DividendoRepository

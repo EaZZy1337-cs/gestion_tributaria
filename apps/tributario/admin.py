@@ -4,6 +4,7 @@ from apps.tributario.models import (
     Mercado,
     Instrumento,
     Emisor,
+    Dividendo,
 )
 
 
@@ -81,4 +82,27 @@ class EmisorAdmin(admin.ModelAdmin):
 
     ordering = (
         "nombre",
+    )
+
+@admin.register(Dividendo)
+class DividendoAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "instrumento",
+        "fecha_corte",
+        "fecha_pago",
+        "monto",
+        "moneda",
+        "tipo_dividendo",
+        "estado",
+    )
+
+    list_filter = (
+        "moneda",
+        "tipo_dividendo",
+        "estado",
+    )
+
+    ordering = (
+        "-fecha_pago",
     )

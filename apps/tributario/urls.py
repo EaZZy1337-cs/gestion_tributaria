@@ -3,6 +3,7 @@ from apps.tributario.views import (
     MercadoViewSet,
     InstrumentoViewSet,
     EmisorViewSet,
+    DividendoViewSet,
 )
 
 router = DefaultRouter()
@@ -23,6 +24,12 @@ router.register(
     "emisores",
     EmisorViewSet,
     basename="emisores",
+)
+
+router.register(
+    "dividendos",
+    DividendoViewSet,
+    basename="dividendos",
 )
 
 urlpatterns = router.urls
