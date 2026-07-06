@@ -1,5 +1,5 @@
 from django.db import models
-
+from .emisor import Emisor
 from apps.core.models import BaseModel
 from .mercado import Mercado
 
@@ -35,6 +35,13 @@ class Instrumento(BaseModel):
         verbose_name="Mercado"
     )
 
+    emisor = models.ForeignKey(
+        Emisor,
+        on_delete=models.PROTECT,
+        related_name="instrumentos",
+        verbose_name="Emisor",
+    )
+    
     estado = models.CharField(
         max_length=10,
         choices=EstadoInstrumento.choices,

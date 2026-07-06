@@ -26,3 +26,13 @@ class MercadoSerializer(serializers.ModelSerializer):
 
     def validate_nombre(self, value):
         return value.strip()
+
+class MercadoSimpleSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Mercado
+        fields = (
+            "id",
+            "codigo",
+            "nombre",
+        )
