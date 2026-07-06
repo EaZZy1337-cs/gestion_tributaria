@@ -1,1 +1,2 @@
 from .mercado_repository import MercadoRepository
+from .instrumento_repository import InstrumentoRepository

@@ -1,1 +1,2 @@
 from .mercado_serializer import MercadoSerializer
+from .instrumento_serializer import InstrumentoSerializer

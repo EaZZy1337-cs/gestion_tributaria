@@ -1,7 +1,7 @@
 from django.db import models
 
 from apps.core.models import BaseModel
-from apps.tributario.models import Mercado
+from .mercado import Mercado
 
 
 class EstadoInstrumento(models.TextChoices):
@@ -11,34 +11,35 @@ class EstadoInstrumento(models.TextChoices):
 
 class Instrumento(BaseModel):
 
-    mercado = models.ForeignKey(
-        Mercado,
-        on_delete=models.PROTECT,
-        related_name="instrumentos",
-        verbose_name="Mercado",
-    )
-
     ticker = models.CharField(
         max_length=20,
         unique=True,
-        verbose_name="Ticker",
+        verbose_name="Ticker"
     )
 
     nombre = models.CharField(
         max_length=150,
-        verbose_name="Nombre",
+        verbose_name="Nombre"
     )
 
     isin = models.CharField(
         max_length=20,
         unique=True,
-        verbose_name="ISIN",
+        verbose_name="ISIN"
+    )
+
+    mercado = models.ForeignKey(
+        Mercado,
+        on_delete=models.PROTECT,
+        related_name="instrumentos",
+        verbose_name="Mercado"
     )
 
     estado = models.CharField(
         max_length=10,
         choices=EstadoInstrumento.choices,
         default=EstadoInstrumento.ACTIVO,
+        verbose_name="Estado"
     )
 
     class Meta:
