@@ -1,0 +1,1 @@
+from .mercado_repository import MercadoRepository

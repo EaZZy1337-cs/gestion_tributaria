@@ -5,20 +5,26 @@ __pycache__/
 
 # Virtual environment
 venv/
+.env/
 
-# Environment variables
+# Variables de entorno
 .env
+.env.*
 
 # Django
 db.sqlite3
 media/
+staticfiles/
 
 # VS Code
 .vscode/
 
+# PyCharm
+.idea/
+
 # Logs
-*.log
 logs/
+*.log
 
 # Python cache
 .pytest_cache/
