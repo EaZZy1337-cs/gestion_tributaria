@@ -23,7 +23,8 @@ class CalificacionTributaria(BaseModel):
         Dividendo,
         on_delete=models.PROTECT,
         related_name="calificaciones",
-        verbose_name="Dividendo",
+        null=True,
+        blank=True,
     )
 
     ejercicio = models.PositiveIntegerField(
